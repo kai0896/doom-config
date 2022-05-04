@@ -67,3 +67,17 @@
 
 (setq ranger-show-hidden t)
 (setq doom-modeline-height 36)
+
+;; auto indent after yank and paste
+(defun paste-and-indent-after ()
+  (interactive)
+  (evil-paste-after 1)
+  (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
+
+(defun paste-and-indent-before ()
+  (interactive)
+  (evil-paste-before 1)
+  (evil-indent (evil-get-marker ?\[) (evil-get-marker ?\])))
+
+(evil-define-key 'normal 'global (kbd "p") 'paste-and-indent-after)
+(evil-define-key 'normal 'global (kbd "P") 'paste-and-indent-before)
