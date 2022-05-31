@@ -39,6 +39,10 @@
       :desc"run-last-vterm-command"
       "v" #'exec-last-vterm)
 
+(map! :leader
+      :desc"recompile"
+      "e" #'recompile)
+
 ;; improve scrolling
 (setq mouse-wheel-scroll-amount '(9 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
